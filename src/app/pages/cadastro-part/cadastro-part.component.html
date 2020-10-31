@@ -1,0 +1,101 @@
+<section id="voluntario">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <h2 class= "color-green titulos">Participe!</h2><br><br>
+
+        <!-- Form em bootstrap -->
+        <form [formGroup]="formularioDeParticipante"(ngSubmit)="enviarDados()" method="POST" >
+
+          <div class="form-group row">
+            <label for="nome-volunt" class="col-sm-2 col-form-label color-green">Nome Completo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="nome-volunt" name="nome-volunt" placeholder="Nome Completo" formControlName = "nome">
+            </div>
+
+            <!-- Mensagens de erro para o nome -->
+            <div *ngIf="!nome.pristine && nome.errors">
+              <p *ngIf="nome.errors.required">
+              Nome é obrigatório.
+              </p>
+              <p *ngIf="nome.errors.minlength">
+              Deve ter no mínimo 3 palavras.
+              </p>
+              <p *ngIf="nome.errors.maxlength">
+              Deve ter no máximo 60 palavras.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email-volunt" class="col-sm-2 col-form-label color-green">Email:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email-volunt" name="email-volunt" placeholder="Email" formControlName = "email">
+            </div>
+
+            <!-- Mensagens de erro para o email -->
+            <div *ngIf="!email.pristine && email.errors">
+              <p *ngIf="email.errors.email">
+              Digite um e-mail válido.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="form-group row">
+            <label for="curso-volunt" class="col-sm-2 col-form-label color-green">Curso:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="curso-volunt" name="curso-volunt" placeholder="Curso" formControlName = "curso">
+            </div>
+
+            <!-- Mensagens de erro para o nome -->
+            <div *ngIf="!curso.pristine && curso.errors">
+              <p *ngIf="curso.errors.required">
+              Curso é obrigatório.
+              </p>
+              <p *ngIf="curso.errors.minlength">
+              Deve ter no mínimo 3 palavras.
+              </p>
+              <p *ngIf="curso.errors.maxlength">
+              Deve ter no máximo 60 palavras.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Caixa de texto para descricao -->
+          <div class="form-group row">
+            <label for="caixatxt-volunt" class="col-sm-2 col-form-label color-green">Motivação:</label>
+            <div class="col-sm-10">
+              <textarea id="caixatxt-volunt" name="caixatxt-volunt" class="md-textarea form-control" rows="3" formControlName = "motivacao"></textarea>
+            </div>
+
+            <!-- Mensagens de erro para o nome -->
+            <div *ngIf="!motivacao.pristine && motivacao.errors">
+              <p *ngIf="motivacao.errors.required">
+              A descrição do projeto é obrigatória.
+              </p>
+              <p *ngIf="motivacao.errors.minlength">
+              A descrição deve ter no mínimo 3 palavras.
+              </p>
+              <p *ngIf="motivacao.errors.maxlength">
+                A descrição deve ter no máximo 200 palavras.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Botões -->
+
+          <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit"
+            [disabled]="!formularioDeParticipante.valid">Enviar</button>
+
+          <div>{{ formularioDeParticipante.value | json }}</div>
+          <div>{{ formularioDeParticipante.valid | json }}</div>
+
+      </form>
+      </div>
+    </div>
+  </div>
+</section>

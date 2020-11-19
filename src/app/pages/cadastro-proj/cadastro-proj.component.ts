@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Projeto } from './../../projeto';
+import { Projeto } from '../../projeto';
 
 @Component({
   selector: 'app-cadastro-proj',

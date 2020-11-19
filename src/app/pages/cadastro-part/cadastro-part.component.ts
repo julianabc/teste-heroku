@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Participante } from './../../participante';
+import { Participante } from '../../participante';
 
 @Component({
   selector: 'app-cadastro-part',
@@ -25,7 +25,8 @@ export class CadastroPartComponent implements OnInit {
       dadosFormulario.nome,
       dadosFormulario.email,
       dadosFormulario.curso,
-      dadosFormulario.motivacao
+      dadosFormulario.motivacao,
+      dadosFormulario.status
     );
 
     // criando mensagem de sucesso
@@ -64,6 +65,8 @@ export class CadastroPartComponent implements OnInit {
         ])
       ]
 
+      //status: ['', Validators.compose([Validators.required])]
+
     });
 
   } // fim do metodo
@@ -85,5 +88,8 @@ export class CadastroPartComponent implements OnInit {
     return this.formularioDeParticipante.get('motivacao');
   }
 
+  get status(){
+    return this.formularioDeParticipante.get('status');
+  }
 
 } // fim da classe

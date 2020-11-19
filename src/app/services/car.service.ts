@@ -46,7 +46,7 @@ export class CarService {
       )
   }
 
-  // utualiza um carro
+  // atualiza um carro
   updateCar(car: Car): Observable<Car> {
     return this.httpClient.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.httpOptions)
       .pipe(

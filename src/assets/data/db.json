@@ -23,6 +23,12 @@
       "color": "rosa",
       "price": 50,
       "id": 4
+    },
+    {
+      "model": "Renault",
+      "color": "Preto",
+      "price": 120,
+      "id": 5
     }
   ]
 }

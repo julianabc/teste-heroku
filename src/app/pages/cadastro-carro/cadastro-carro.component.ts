@@ -20,7 +20,7 @@ export class CadastroCarroComponent implements OnInit {
     this.getCars();
   }
 
-  // defini se um carro será criado ou atualizado
+  // define se um carro será criado ou atualizado
   saveCar(form: NgForm) {
     if (this.car.id !== undefined) {
       this.carService.updateCar(this.car).subscribe(() => {

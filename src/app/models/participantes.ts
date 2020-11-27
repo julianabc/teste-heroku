@@ -6,4 +6,6 @@ export interface Participantes {
   motivacao: string;
   status: string;
 
+// não usar para pegar o arquivo por enquanto. apenas testar as validações
+
 }
